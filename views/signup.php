@@ -140,6 +140,12 @@
       </div>
 
       <!--<button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>-->
+
+      <section class=botones>  
+               <div id="separar">    
+               <span class="boton" type="submit">    Ingresar   </span>
+               </div>     
+               
       <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
 <br>
 
