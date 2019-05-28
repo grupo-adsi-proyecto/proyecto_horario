@@ -1,0 +1,60 @@
+*{
+	padding:0;
+	margin:0;
+	/*box*/
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box; 
+}
+
+.contenedor{
+	width: 95%;
+	max-width:1000px;
+	margin:auto;
+} 
+/*para el largo de la pagina*/
+     .contenedor p {
+	margin-bottom: 40px;
+     }
+header nav{
+	background:#3498db;
+	/*color flat*/
+	margin-bottom:10px;
+	/*sobra opcional*/
+}
+    header nav ul{
+ 	list-style:none;
+ 	overflow: hidden; 
+ 	/*primero el para evitar la unios con el texto*/
+    }
+       header nav ul li{
+ 	      float:left;
+ 	      /*para que este los botones uno al lado del otro*/
+       }
+          header nav ul li a{
+          	display:block;
+          	/*para editar facilmente*/
+          	padding:20px;
+          	color:#fff;
+          	text-decoration: none;
+          }
+          header nav ul li a:hover{
+          	background: red;
+          	/*Color seleccion del cursor*/
+          }
+/*nueva clase*/
+.menu-fixed{
+	position:fixed;
+	/*el menu siempre permanecera en la pantalla*/
+	z-index: 1000px;
+	/*para que se ponga el menu arriba de todos los elementos*/
+	top:0;
+	/*pegado en la parte superior*/
+	width:100%;
+	/*para abarcar el horizontal*/
+	max-width:1000px;
+	/*con la totalidad del menu*/
+	box-shadow:0px 4px 3px rgba(0,0,0,.5);
+	/* Sombra derecha vertical tamaño y color con transparencia*/
+	background-image: url("../img/fondo2.jpg");
+}         
