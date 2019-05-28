@@ -22,7 +22,7 @@ foreach (array_keys($_POST) as $value ){
 //
 if($rol==1){
 
-    $lista_usurios = createUser($rol,$documento, $passw);
+    $lista_usurios = createUser($documento, $passw);
 
     if($lista_usurios==false){
         echo "error en el servidor";
