@@ -4,6 +4,8 @@
  //create
  require '../conection.php';
 
+//// lectura /////
+
  function createUser( $documento, $passw){
 
  global $conn;
@@ -27,47 +29,38 @@ if ($conn->query($insertar) == TRUE) {
 	echo'Error al registrarse';
 }
 
-
 }
 
 
 
 
-//lectura
 
-function readUser($documento, $password, $rol){
+
+//// lectura /////
+
+function readAdmin($documento, $password){
 
     global $conn;
+    
+    $sql = "SELECT * FROM administrador WHERE ID_Ad='".$documento."' AND Contra_Ad='".$password."'";
+    
+    $result =  $conn->query($sql);
 
-    if(!$conn){
-       die("conexion fallida:" .mysqli_connect_error());
+    if (!$result) {
+        trigger_error('Invalid query: ' . $conn->error);
+        return false;
+    }else if ($result->num_rows > 0) {
+        // output data of each row
+        return $result;
+        /*while($row = $result->fetch_assoc()) {
+            echo "id: " . $row["id"]. " - documento: " . $row["documento"]. " " . $row["password"]. "<br>";
+        }*/
+    } else {
+        return "vacio";
     }
-/*
-    $ficha=$_POST['ficha'];
-    $documento= $_POST['documento'];
-    $password=$_POST['password'];
-    $rol=$_POST['rol'];
-
-   //aqui conexion a base de datos etc...
-  if (isset($_POST['verificar'] and $_POST['id'] null!= "")){
-  //vemos si apreto verificar y consultamos si el datos esta.
- 
- $sql = mysql_query("SELECT * FROM users WHERE id = '$_POST[id]'");
-
- while ($dato = mysql_fetch_array($sql)){
-
- //de estar el dato lo guaramos en las variables
- $id = $dato[id];
- $nombre = $dato[nombre];
- }
-
- }
- echo "leer";
-
- mysqli_close($conn); 
-*/
-}
+    $conn->close();
+    
+  
+    }
 
 
-
-?>

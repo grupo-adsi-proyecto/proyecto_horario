@@ -1,24 +1,10 @@
 <?php
-  //require '../database.php';
   $message = '';
-/*
-  if (!empty($_POST['documento']) && !empty($_POST['password'])) {
-    echo "adentro...";
 
-    $sql = "INSERT INTO users (documento, password) VALUES (:documento, :password)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':documento', $_POST['documento']);
-    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-    $stmt->bindParam(':password', $password);
-
-    if ($stmt->execute()) {
-      $message = 'Nuevo usuario creado con éxito.';
-    } else {
-      $message = 'Losiento el ingreso no corresponde.';
-    }
-    
+  if(isset($_GET["ERROR"])){
+    $message = $_GET["ERROR"];
   }
-*/
+
 ?>
 <!DOCTYPE html>
 <html >
@@ -52,7 +38,7 @@
     <?php require '../partials/header.php' ?>
 
     <h2 ><b><font color="#fc7323">Ingreso de Usuarios </h2></b></font>
-    
+
     <!-- <form method="POST" action="../controller/userManagment.php">  
       <input name="documento" type="number" placeholder="Ingrese numero de Cedula" Required="required">
       <input name="password" type="password" placeholder="constraseña" Required="required">
@@ -60,9 +46,7 @@
       <input type="submit" value="Guardar">
     </form> -->
 
-    <?php
-  echo $message;
-?>
+    
 <br>
 <br>
 <div class="container">
@@ -141,7 +125,17 @@
 
       <!--<button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>-->
       <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+      
+      <?php if($message!=''){ ?>
+         <div class="alert alert-danger" role="alert">
+         <?php echo $message; ?>
+          </div>
+      <?php } ?>
+      
 
+
+      
+      
    
 <br>
 

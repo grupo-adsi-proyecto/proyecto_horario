@@ -1,3 +1,11 @@
+<?php
+
+session_start();
+if(!isset($_SESSION['IS_SESSION'])){
+	header('Location: ../views/signup.php');         
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +23,9 @@
     
 </head>
 <body>
+
+<a  href="../controller/logOutController.php">Cerrar sesión</a>
+
 	<header>
 		   <div class="contenedor">
 			<div class="logo">
