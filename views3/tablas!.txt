@@ -1,0 +1,54 @@
+jornada.php
+<?php
+$con = mysqli_connect("localhost","root","","db82");
+$sql = mysqli_query($con, "SELECT * FROM Jornada;");
+echo "<option value='0'> Seleccionar Jornada </option>";
+while ($b=mysqli_fetch_array($sql)) {
+  echo "<option value='".$b['Cod_J']."'> ".$b['Nom_J']." </option>";
+}
+?>
+
+
+dia.php
+<?php
+$con = mysqli_connect("localhost","root","","db82");
+$sql = mysqli_query($con, "SELECT * FROM Dias;");
+echo "<option value='0'> Seleccionar Dia </option>";
+while ($a=mysqli_fetch_array($sql)) {
+  echo "<option value='".$a['Cod_D']."'> ".$a['Nom_D']." </option>";
+}
+?>
+
+
+Instructor.php
+<?php
+$con = mysqli_connect("localhost","root","","db82");
+$sql = mysqli_query($con, "SELECT * FROM Instructor;");
+echo "<option value='0'> Seleccionar Instructor </option>";
+while ($g=mysqli_fetch_array($sql)) {
+  echo "<option value='".$g['ID_Inst']."'> ".$g['Nom_Inst']." </option>";
+}
+?>
+
+
+rae.php
+<?php
+$competencia = $_POST['competencia'];
+$con = mysqli_connect("localhost","root","","db82");
+$sql = mysqli_query($con, "SELECT * FROM Resultados_de_Aprendizaje r WHERE r.Cod_C = ".$competencia.";");
+echo "<option value='0'> Seleccionar RAE </option>";
+while ($f=mysqli_fetch_array($sql)) {
+  echo "<option value='".$f['Cod_RAE']."'> ".$f['Descrip_RAE']." </option>";
+}
+?>
+
+
+sede.php
+<?php
+$con = mysqli_connect("localhost","root","","db82");
+$sql = mysqli_query($con, "SELECT * FROM Sede;");
+echo "<option value='0'> Seleccionar Sede </option>";
+while ($c=mysqli_fetch_array($sql)) {
+  echo "<option value='".$c['Cod_S']."'> ".$c['Nom_S']." - ".$c['Direc_S']." </option>";
+}
+?>
