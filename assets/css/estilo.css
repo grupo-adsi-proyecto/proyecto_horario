@@ -1,0 +1,25 @@
+img{
+	max-width: 100%;
+}
+.letra{
+	font-family: 'Montserrat', sans-serif;
+}
+.verde{
+	color: #1FE415;
+}
+.naranja{
+	background-color: #FA6B0D;
+	color: #FFFFFF;
+}
+.largo{
+	padding: 5px 10px;
+}
+.no-lista{
+margin: 0px;
+padding: 0px;
+}
+.block{
+	float: none;
+	display: inline-block;
+	margin-right: -4px;
+}

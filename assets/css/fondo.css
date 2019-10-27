@@ -15,10 +15,6 @@ de fondo o si hay problemas para cargarla */
 background-color: #66999;
 }
 
-.botones {
-text-align: center;
-width:500px; height:50px;
-}
 
 .boton {
   color: #fff !important;

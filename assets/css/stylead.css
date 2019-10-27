@@ -1,0 +1,18 @@
+                                            /*////////////////////////////////////////
+   Estilos del Administrador
+
+   para utilizar estilos 
+    modificar el bootstrab
+
+    aunque el bootstrab esta por via web no hay libreria descargada
+    */
+
+body {
+ 
+  background-color: black;
+}
+
+h1 {
+  color: black;
+  text-align: center;
+}
